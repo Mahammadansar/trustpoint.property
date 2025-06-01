@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abu Dhabi Interactive Map</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f9fc;
+    }
+
+    #abudhabiMap {
+      height: 100vh;
+      width: 100%;
+      border: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .leaflet-popup-content {
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 8px;
+      font-weight: 400;
+    }
+
+    .leaflet-popup-content-wrapper {
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      background-color: #fff;
+    }
+
+    .leaflet-popup-tip {
+      background-color: #fff;
+    }
+
+    .leaflet-container a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .leaflet-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="abudhabiMap"></div>
+
+  <script>
+    // Initialize the map centered on Abu Dhabi
+    const map = L.map('abudhabiMap').setView([24.4539, 54.3773], 11);
+
+    // Load OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      className: 'modern-map'
+    }).addTo(map);
+
+    // Define Abu Dhabi locations
+    const locations = [
+      {
+        name: "Sheikh Zayed Grand Mosque",
+        coords: [24.4120, 54.4749],
+        info: "One of the world's largest and most beautiful mosques."
+      },
+      {
+        name: "Emirates Palace",
+        coords: [24.4605, 54.3172],
+        info: "Iconic luxury hotel and landmark."
+      },
+      {
+        name: "Corniche Beach",
+        coords: [24.4996, 54.3576],
+        info: "Popular public beach along the Abu Dhabi Corniche."
+      },
+      {
+        name: "Louvre Abu Dhabi",
+        coords: [24.5333, 54.3969],
+        info: "Famous art museum located on Saadiyat Island."
+      },
+      {
+        name: "Yas Island",
+        coords: [24.4709, 54.6036],
+        info: "Entertainment district home to Ferrari World and Yas Marina Circuit."
+      },
+      {
+        name: "Qasr Al Watan",
+        coords: [24.4539, 54.3019],
+        info: "Presidential palace open to the public, showcasing Arabian heritage."
+      }
+    ];
+
+    // Custom icon for a cleaner design
+    const customIcon = L.icon({
+      iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+      iconSize: [30, 30],
+      iconAnchor: [15, 30],
+      popupAnchor: [0, -30]
+    });
+
+    // Add markers with modern popups
+    locations.forEach(loc => {
+      L.marker(loc.coords, { icon: customIcon })
+        .addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong><br>${loc.info}`);
+    });
+  </script>
+
+</body>
+</html>

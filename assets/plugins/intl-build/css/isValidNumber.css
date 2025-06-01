@@ -1,0 +1,59 @@
+#error-msg, #error-sh-msg, #error-e-msg, #error-su-msg, #error-ne-msg {
+  color: red;
+}
+#valid-msg {
+  color: #00C900;
+}
+input.error {
+  border: 1px solid #FF7C7C;
+}
+.hide {
+  display: none;
+}
+.css-ual8eg {
+  font-family: var(--chakra-fonts-heading);
+  font-weight: 600;
+  font-size: var(--chakra-fontSizes-2xl);
+  line-height: 100%;
+  color: var(--chakra-colors-neutral-900);
+  text-align: center;
+  /* margin-bottom: 0px !important; */
+}
+.css-17q39og {
+  font-size: var(--chakra-fontSizes-md);
+  color: var(--chakra-colors-neutral-900);
+  font-weight: var(--chakra-fontWeights-normal);
+  letter-spacing: -0.01em;
+  line-height: 135%;
+  text-align: center;
+  /* margin: 0px; */
+}
+.css-18b6ctc {
+  /* display: flex; */
+  appearance: none;
+  align-items: self-end;
+  -webkit-box-pack: center;
+  justify-content: center;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  line-height: var(--chakra-lineHeights-xs);
+  border-radius: 32px;
+  font-weight: var(--chakra-fontWeights-semibold);
+  transition: background 600ms ease 0s, border 600ms ease 0s;
+  font-size: var(--chakra-fontSizes-sm);
+  height: 56px;
+  min-width: var(--chakra-sizes-12);
+  padding-inline-start: var(--chakra-space-6);
+  padding-inline-end: var(--chakra-space-6);
+  padding: 18px 24px;
+  background: var(--chakra-colors-neutral-900);
+  border-width: 1px;
+  border-style: solid;
+  border-image: initial;
+  color: var(--chakra-colors-neutral-100);
+  border-color: var(--chakra-colors-neutral-900);
+}

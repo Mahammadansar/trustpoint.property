@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dubai Interactive Map</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet/dist/leaflet.js"
+  ></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #dubaiMap {
+      height: 100vh;
+      width: 100%;
+    }
+
+    .leaflet-popup-content {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="dubaiMap"></div>
+
+  <script>
+    // Initialize the map centered on Dubai
+    var map = L.map('dubaiMap').setView([25.2048, 55.2708], 11);
+
+    // Load and display OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Define Dubai locations and projects
+    var locations = [
+      {
+        name: "Burj Khalifa",
+        coords: [25.1972, 55.2744],
+        info: "World's tallest building."
+      },
+      {
+        name: "Palm Jumeirah",
+        coords: [25.1121, 55.1387],
+        info: "Man-made island with luxury residences."
+      },
+      {
+        name: "Dubai Marina",
+        coords: [25.0800, 55.1400],
+        info: "Popular waterfront neighborhood with skyscrapers."
+      },
+      {
+        name: "Jumeirah Village Circle (JVC)",
+        coords: [25.0615, 55.2168],
+        info: "Residential community with villas and apartments."
+      },
+      {
+        name: "Downtown Dubai",
+        coords: [25.1945, 55.2753],
+        info: "Home to Dubai Mall and Burj Khalifa."
+      },
+      {
+        name: "Dubai Creek Harbour",
+        coords: [25.2172, 55.3437],
+        info: "New waterfront development with skyline views."
+      }
+    ];
+
+    // Add markers to the map
+    locations.forEach((loc) => {
+      L.marker(loc.coords)
+        .addTo(map)
+        .bindPopup(`<b>${loc.name}</b><br>${loc.info}`);
+    });
+  </script>
+
+</body>
+</html>
