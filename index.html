@@ -35,6 +35,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 
 	<script>
@@ -91,12 +92,24 @@
 			background-size: cover;
 		}
 
+		@keyframes slowZoom {
+			0% {
+				background-size: 100%;
+			}
+
+			100% {
+				background-size: 110%;
+			}
+		}
+
+
 		.top-bg {
 			background-image: url('https://www.arabianbusiness.com/cloud/2024/07/18/abu-dhabi-real-estate.jpg');
 			min-height: 100vh;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
+			/* animation: slowZoom 16s ease-in-out infinite; */
 		}
 
 		.section-bg {
@@ -188,7 +201,8 @@
 							<ul class="navbar-nav mobile-cheater">
 								<!-- Instagram -->
 								<li class="d-md-inline-block ml-2">
-									<a href="https://www.instagram.com/trustpoint.prop?igsh=bjVxNzc0NHpyMGxq" target="_blank">
+									<a href="https://www.instagram.com/trustpoint.prop?igsh=bjVxNzc0NHpyMGxq"
+										target="_blank">
 										<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
 											alt="Instagram" style="height:40px; width:auto; margin-left: 4px;">
 									</a>
@@ -223,17 +237,20 @@
 				<div class="row no-gutters justify-content-center w-100">
 					<div class="col-lg-8 text-center">
 						<div class="hero-first">
-							<h2 class="mt-4 mb-5">Find Your Perfect Property with <br><span class="bold">Trust Point
-									Realty</span></h2>
+							<h2 class="mt-4 mb-5">
+								Your Trusted Partner in Finding the Perfect Property <br>
+								<span class="bold animated-text">Trust Point Realty</span>
+							</h2>
+
 
 							<!-- Desktop Buttons -->
-							<div class="btn-layer mb-5 d-none d-md-block">
+							<div class="btn-layer mb-8 d-none d-md-block">
 								<a href="#" class="btn bg-white mr-md-3 mt-2">Sale</a>
 								<a href="#" class="btn bg-white mr-md-3 mt-2">Buy</a>
 								<!-- <a href="en/property-list/sale.html" class="btn bg-white mr-md-3 mt-2">Off-Plan</a> -->
 							</div>
 
-							<div class="btn-layer mb-5 d-md-none">
+							<div class="btn-layer mb-8 d-md-none">
 								<div>
 									<a href="#" class="btn bg-white mr-md-3 mt-2">Sale</a>
 									<a href="#" class="btn bg-white mr-md-3 mt-2">Buy</a>
@@ -253,6 +270,24 @@
 		ul .dropdown-menu .inner .show {
 			display: block !important;
 		}
+
+		.mb-8 {
+			margin-bottom: 8rem !important;
+		}
+
+		.animated-text {
+			display: inline-block;
+			opacity: 0;
+			transform: translateY(20px);
+			animation: fadeSlideUp 2.1s ease-out forwards;
+		}
+
+		@keyframes fadeSlideUp {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
 	</style>
 	<div class="container-fluid d-flex justify-content-center align-items-center">
 		<div class="row w-100 justify-content-center">
@@ -260,7 +295,7 @@
 				<form action="" method="post" accept-charset="utf-8">
 					<div class="marginer-new p-0 bg-alaya">
 						<div class="row">
-							<div class="col-lg-10 col-md-10 search_bar_1_sec_col">
+							<div class="col-lg-12 col-md-8 search_bar_1_sec_col">
 								<div class="p-3">
 									<div class="row">
 										<div class="propr_here"></div>
@@ -301,17 +336,17 @@
 												<option value="Apartment">Apartment</option>
 												<option value="Townhouse">Townhouse</option>
 												<option value="Villa">Villa</option>
-												<option value="Penthouse">Penthouse</option>
+												<!-- <option value="Penthouse">Penthouse</option> -->
 												<option value="Land">Land</option>
-												<option value="Studio">Studio</option>
-												<option value="Office">Office</option>
+												<!-- <option value="Studio">Studio</option>
+												<option value="Office">Office</option> -->
 												<option value="Commercial">Commercial</option>
-												<option value="Shop">Shop</option>
+												<!-- <option value="Shop">Shop</option>
 												<option value="Duplex">Duplex</option>
 												<option value="Hotel Apartment">Hotel Apartment</option>
 												<option value="Loft">Loft</option>
 												<option value="Retail">Retail</option>
-												<option value="Residential">Residential</option>
+												<option value="Residential">Residential</option> -->
 
 											</select>
 										</div>
@@ -692,7 +727,10 @@
 			<!---------old ely-------->
 			<div class="shop_single_tab_content style2 ">
 				<div class=" text-center">
-					<h3 class="mt-4 text-blue mb-5 h3-ely">Handpicked Luxury Homes Just for You</h3>
+					<h3 class="mt-4 text-blue mb-5 h3-ely" data-aos="fade-up" data-aos-duration="1200">
+						Handpicked Luxury Homes Just for You
+					</h3>
+
 
 				</div>
 
@@ -720,7 +758,8 @@
 									<p class="text-alaya mb-0">Villa for Sale </p>
 
 									<p class="text-el-blue mb-1 font-p"> Property 1 </p>
-									<p class="text-alaya"> <i class="fa fa-map-marker"></i> Abu Dhabi, United Arab Emirates</p>
+									<p class="text-alaya"> <i class="fa fa-map-marker"></i> Abu Dhabi, United Arab
+										Emirates</p>
 
 								</div>
 								<div class="row no-gutters">
@@ -752,7 +791,8 @@
 									<p class="text-alaya mb-0">Villa for Sale </p>
 
 									<p class="text-el-blue mb-1 font-p"> Property 2 </p>
-									<p class="text-alaya"> <i class="fa fa-map-marker"></i> Abu Dhabi, United Arab Emirates</p>
+									<p class="text-alaya"> <i class="fa fa-map-marker"></i> Abu Dhabi, United Arab
+										Emirates</p>
 
 								</div>
 								<div class="row no-gutters">
@@ -783,7 +823,8 @@
 									<p class="text-alaya mb-0">Villa for Sale </p>
 
 									<p class="text-el-blue mb-1 font-p"> Property 3 </p>
-									<p class="text-alaya"> <i class="fa fa-map-marker"></i> Abu Dhabi, United Arab Emirates</p>
+									<p class="text-alaya"> <i class="fa fa-map-marker"></i> Abu Dhabi, United Arab
+										Emirates</p>
 
 								</div>
 								<div class="row no-gutters">
@@ -812,7 +853,7 @@
 	</section>
 
 
-<!-- 
+	<!-- 
 	<section class="bg-lighter-new py-5">
     <div class="container">
 
@@ -859,56 +900,58 @@
     </div>
 </section> -->
 
-<section class="bg-lighter-new py-5">
-  <div class="container">
-    <!-- Section Title -->
-    <div class="row mt-md-5 mb-4">
-      <div class="col-md-8 mx-auto text-center">
-        <h3 class="my-4 h3-ely">Discover Top Communities in the UAE</h3>
-        <p class="font-p">
-          Explore the UAE’s premier communities—from the dynamic Downtown Dubai to the serene Saadiyat Island, vibrant Aljada, and stunning Mina Al Arab. Discover your ideal home and embrace a lifestyle of unmatched luxury and investment potential.
-        </p>
-      </div>
-    </div>
+	<section class="bg-lighter-new py-5">
+		<div class="container">
+			<!-- Section Title -->
+			<div class="row  mb-4">
+				<div class="col-md-8 mx-auto text-center">
+					<h3 class="my-4 h3-ely" data-aos="fade-up" data-aos-duration="1000">Discover Top Communities in the UAE</h3>
+					<p class="font-p" data-aos="fade-up" data-aos-duration="1050">
+						Explore the UAE’s premier communities—from the dynamic Downtown Dubai to the serene Saadiyat
+						Island, vibrant Aljada, and stunning Mina Al Arab. Discover your ideal home and embrace a
+						lifestyle of unmatched luxury and investment potential.
+					</p>
+				</div>
+			</div>
 
-    <!-- Communities Grid -->
-    <div class="row">
+			<!-- Communities Grid -->
+			<div class="row">
 
-      <!-- Dubai - Downtown Dubai -->
-      <div class="col-lg-3 col-md-6 col-sm-12 my-3">
-        <div class="main-agent text-center">
-          <img src="uploads/communities/downtown-dubai.jpg" alt="Downtown Dubai">
-          <h5 class="mt-3">Downtown Dubai <small class="text-muted d-block">Dubai</small></h5>
-        </div>
-      </div>
+				<!-- Dubai - Downtown Dubai -->
+				<div class="col-lg-3 col-md-6 col-sm-12 my-3">
+					<div class="main-agent text-center" data-aos="fade-up" data-aos-duration="1000">
+						<img src="uploads/communities/downtown-dubai.jpg" alt="Downtown Dubai">
+						<h5 class="mt-3">Downtown Dubai <small class="text-muted d-block">Dubai</small></h5>
+					</div>
+				</div>
 
-      <!-- Abu Dhabi - Saadiyat Island -->
-      <div class="col-lg-3 col-md-6 col-sm-12 my-3">
-        <div class="main-agent text-center">
-          <img src="uploads/communities/saadiyat-island.webp" alt="Saadiyat Island">
-          <h5 class="mt-3">Saadiyat Island <small class="text-muted d-block">Abu Dhabi</small></h5>
-        </div>
-      </div>
+				<!-- Abu Dhabi - Saadiyat Island -->
+				<div class="col-lg-3 col-md-6 col-sm-12 my-3">
+					<div class="main-agent text-center" data-aos="fade-up" data-aos-duration="1200">
+						<img src="uploads/communities/saadiyat-island.webp" alt="Saadiyat Island">
+						<h5 class="mt-3">Saadiyat Island <small class="text-muted d-block">Abu Dhabi</small></h5>
+					</div>
+				</div>
 
-      <!-- Sharjah - Aljada -->
-      <div class="col-lg-3 col-md-6 col-sm-12 my-3">
-        <div class="main-agent text-center">
-          <img src="uploads/communities/aljada.jpeg" alt="Aljada Sharjah">
-          <h5 class="mt-3">Aljada <small class="text-muted d-block">Sharjah</small></h5>
-        </div>
-      </div>
+				<!-- Sharjah - Aljada -->
+				<div class="col-lg-3 col-md-6 col-sm-12 my-3">
+					<div class="main-agent text-center" data-aos="fade-up" data-aos-duration="1300">
+						<img src="uploads/communities/aljada.jpeg" alt="Aljada Sharjah">
+						<h5 class="mt-3">Aljada <small class="text-muted d-block">Sharjah</small></h5>
+					</div>
+				</div>
 
-      <!-- RAK - Mina Al Arab -->
-      <div class="col-lg-3 col-md-6 col-sm-12 my-3">
-        <div class="main-agent text-center">
-          <img src="uploads/communities/mina-al-arab.jpg" alt="Mina Al Arab RAK">
-          <h5 class="mt-3">Mina Al Arab <small class="text-muted d-block">Ras Al Khaimah</small></h5>
-        </div>
-      </div>
+				<!-- RAK - Mina Al Arab -->
+				<div class="col-lg-3 col-md-6 col-sm-12 my-3">
+					<div class="main-agent text-center" data-aos="fade-up" data-aos-duration="1400">
+						<img src="uploads/communities/mina-al-arab.jpg" alt="Mina Al Arab RAK">
+						<h5 class="mt-3">Mina Al Arab <small class="text-muted d-block">Ras Al Khaimah</small></h5>
+					</div>
+				</div>
 
-    </div>
-  </div>
-</section>
+			</div>
+		</div>
+	</section>
 
 
 	<section class="bg-main-blue py-5">
@@ -917,9 +960,9 @@
 			<div class="row mt-5 mb-4">
 				<div class="col-md-5">
 					<div class=" text-left">
-						<h3 class="mt-4 text-white h3-ely">See What Our Client Says <br>
+						<h3 class="mt-4 text-white h3-ely" data-aos="fade-up" data-aos-duration="1000">See What Our Client Says <br>
 
-							
+
 						</h3>
 						<!--<p class="font-p text-white"></p>-->
 						<div class="btn-layer mb-5 ">
@@ -991,20 +1034,19 @@
 			<div class="row mt-5 mb-4">
 				<div class="col-md-5">
 					<div class="py-3 text-left v-h-align">
-						<h3 class="mt-4 mb-5  h3-ely">At Trust Point Realty, we offer a comprehensive range of real
+						<h3 class="mt-4 mb-5  h3-ely" data-aos="fade-up" data-aos-duration="1000">At Trust Point Realty, we offer a comprehensive range of real
 							estate services tailored to meet your needs.</h3>
 						<div class="btn-layer mb-5">
-							<a href="en/contact-us.html" target="_blank" class="btn btn-bg-white-border-blue mr-md-3 no-radius mt-2">
+							<a href="en/contact-us.html" target="_blank"
+								class="btn btn-bg-white-border-blue mr-md-3 no-radius mt-2">
 								Contact Us</a>
 
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-7">
-					<img class="img-responsive"
-						src="uploads/communities/abudhabi.webp"
-						width="100%" height="420">
+				<div class="col-md-7" data-aos="fade-up" data-aos-duration="1000">
+					<img class="img-responsive" src="uploads/communities/abudhabi.webp" width="100%" height="420">
 
 				</div>
 			</div>
@@ -1015,58 +1057,60 @@
 
 
 	<section class="bg-lighter-new py-5">
-    <div class="container">
+		<div class="container">
 
-        <div class="row mt-5 mb-4">
+			<div class="row mt-5 mb-4">
 
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-block mb-4 mb-md-0">
-                    <h4> Top Searches </h4>
-                    <a href="en/top-searches/for-sale/Apartment.html">Properties for sale in Abu Dhabi</a>
-                    <a href="en/top-searches/for-rent/Apartment.html">Properties for buy in Abu Dhabi</a>
-                    <a href="en/top-searches/for-sale/Villa.html">Villas for sale in Abu Dhabi</a>
-                    <a href="en/top-searches/for-rent/Villa.html">Villas for buy in Abu Dhabi</a>
-                    <a href="en/top-searches/for-sale/Townhouse.html">Townhouses for sale in Abu Dhabi</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-block mb-4 mb-md-0">
-                    <h4>Top Community Searches</h4>
-                    <a href="en/top-searches/for-sale/Apartment/Saadiyat-Island.html">Saadiyat Island</a>
-                    <a href="en/top-searches/for-sale/Apartment/Yas-Island.html">Yas Island</a>
-                    <a href="en/top-searches/for-sale/Apartment/Al-Reem-Island.html">Al Reem Island</a>
-                    <a href="en/top-searches/for-sale/Apartment/Al-Raha-Beach.html">Al Raha Beach</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-block mb-4 mb-md-0">
-                    <h4> Properties for buy </h4>
-                    <a href="en/top-searches/for-rent/Saadiyat-Island.html">Properties for buy in Saadiyat Island</a>
-                    <a href="en/top-searches/for-rent/Yas-Island.html">Properties for buy in Yas Island</a>
-                    <a href="en/top-searches/for-rent/Al-Reem-Island.html">Properties for buy in Al Reem Island</a>
-                    <a href="en/top-searches/for-rent/Al-Raha-Beach.html">Properties for buy in Al Raha Beach</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-block mb-4 mb-md-0">
-                    <h4> Properties for Sale </h4>
-                    <a href="en/top-searches/for-sale/Saadiyat-Island.html">Properties for sale in Saadiyat Island</a>
-                    <a href="en/top-searches/for-sale/Yas-Island.html">Properties for sale in Yas Island</a>
-                    <a href="en/top-searches/for-sale/Al-Reem-Island.html">Properties for sale in Al Reem Island</a>
-                    <a href="en/top-searches/for-sale/Al-Raha-Beach.html">Properties for sale in Al Raha Beach</a>
-                </div>
-            </div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-block mb-4 mb-md-0">
+						<h4> Top Searches </h4>
+						<a href="en/top-searches/for-sale/Apartment.html">Properties for sale in Abu Dhabi</a>
+						<a href="en/top-searches/for-rent/Apartment.html">Properties for buy in Abu Dhabi</a>
+						<a href="en/top-searches/for-sale/Villa.html">Villas for sale in Abu Dhabi</a>
+						<a href="en/top-searches/for-rent/Villa.html">Villas for buy in Abu Dhabi</a>
+						<a href="en/top-searches/for-sale/Townhouse.html">Townhouses for sale in Abu Dhabi</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-block mb-4 mb-md-0">
+						<h4>Top Community Searches</h4>
+						<a href="en/top-searches/for-sale/Apartment/Saadiyat-Island.html">Saadiyat Island</a>
+						<a href="en/top-searches/for-sale/Apartment/Yas-Island.html">Yas Island</a>
+						<a href="en/top-searches/for-sale/Apartment/Al-Reem-Island.html">Al Reem Island</a>
+						<a href="en/top-searches/for-sale/Apartment/Al-Raha-Beach.html">Al Raha Beach</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-block mb-4 mb-md-0">
+						<h4> Properties for buy </h4>
+						<a href="en/top-searches/for-rent/Saadiyat-Island.html">Properties for buy in Saadiyat
+							Island</a>
+						<a href="en/top-searches/for-rent/Yas-Island.html">Properties for buy in Yas Island</a>
+						<a href="en/top-searches/for-rent/Al-Reem-Island.html">Properties for buy in Al Reem Island</a>
+						<a href="en/top-searches/for-rent/Al-Raha-Beach.html">Properties for buy in Al Raha Beach</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-block mb-4 mb-md-0">
+						<h4> Properties for Sale </h4>
+						<a href="en/top-searches/for-sale/Saadiyat-Island.html">Properties for sale in Saadiyat
+							Island</a>
+						<a href="en/top-searches/for-sale/Yas-Island.html">Properties for sale in Yas Island</a>
+						<a href="en/top-searches/for-sale/Al-Reem-Island.html">Properties for sale in Al Reem Island</a>
+						<a href="en/top-searches/for-sale/Al-Raha-Beach.html">Properties for sale in Al Raha Beach</a>
+					</div>
+				</div>
 
-        </div>
-    </div>
-</section>
+			</div>
+		</div>
+	</section>
 
 	<!-- SCROLL TO TOP -->
 	<a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
 	<!-- END SCROLL TO TOP -->
 
 
-	
+
 	<script src="assets/js/index.bundlebd04bd04.js?8918068d71def746395d"
 		type="b4261873876b98ad6c39f619-text/javascript"></script>
 	<script src="../cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"
@@ -1622,88 +1666,101 @@ function get_sort_option()
 		data-cf-beacon='{"rayId":"931bdb130900e05a","version":"2025.4.0-1-g37f21b1","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"7e5a9681c66a45f289647fcbfd0d16e9","b":1}'
 		crossorigin="anonymous"></script>
 
-		<!-- Real Estate Brokerage Popup -->
-<div id="comingSoonModal" class="coming-soon-modal" style="display: none;">
-  <div class="coming-soon-content">
-    <h2>We're Building Something Exceptional!</h2>
-    <p>Welcome to <strong>Trust Point Realty</strong> — your trusted partner in finding dream properties in the UAE. We're crafting a powerful platform to help you discover exclusive real estate opportunities.</p>
-    <p>Stay tuned — we’re coming soon with a world-class property experience!</p>
-    <button onclick="closeModal()">Got it!</button>
-  </div>
-</div>
+	<!-- Real Estate Brokerage Popup -->
+	<!-- <div id="comingSoonModal" class="coming-soon-modal" style="display: none;">
+		<div class="coming-soon-content">
+			<h2>We're Building Something Exceptional!</h2>
+			<p>Welcome to <strong>Trust Point Realty</strong> — your trusted partner in finding dream properties in the
+				UAE. We're crafting a powerful platform to help you discover exclusive real estate opportunities.</p>
+			<p>Stay tuned — we’re coming soon with a world-class property experience!</p>
+			<button onclick="closeModal()">Got it!</button>
+		</div>
+	</div> -->
 
-<style>
-  /* Modal Styles */
-  .coming-soon-modal {
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', sans-serif;
-  }
+	<style>
+		/* Modal Styles */
+		.coming-soon-modal {
+			position: fixed;
+			z-index: 9999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.85);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Segoe UI', sans-serif;
+		}
 
-  .coming-soon-content {
-    background: #ffffff;
-    padding: 40px 50px;
-    text-align: center;
-    border-radius: 12px;
-    max-width: 450px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-    animation: fadeIn 0.6s ease;
-  }
+		.coming-soon-content {
+			background: #ffffff;
+			padding: 40px 50px;
+			text-align: center;
+			border-radius: 12px;
+			max-width: 450px;
+			box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+			animation: fadeIn 0.6s ease;
+		}
 
-  .coming-soon-content h2 {
-    font-size: 26px;
-    margin-bottom: 20px;
-    color: #004085;
-  }
+		.coming-soon-content h2 {
+			font-size: 26px;
+			margin-bottom: 20px;
+			color: #004085;
+		}
 
-  .coming-soon-content p {
-    font-size: 16px;
-    margin-bottom: 18px;
-    color: #333333;
-  }
+		.coming-soon-content p {
+			font-size: 16px;
+			margin-bottom: 18px;
+			color: #333333;
+		}
 
-  .coming-soon-content button {
-    background: #004085;
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
-  }
+		.coming-soon-content button {
+			background: #004085;
+			color: #fff;
+			border: none;
+			padding: 12px 30px;
+			border-radius: 6px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background 0.3s ease;
+		}
 
-  .coming-soon-content button:hover {
-    background: #002752;
-  }
+		.coming-soon-content button:hover {
+			background: #002752;
+		}
 
-  @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(-20px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-</style>
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(-20px);
+			}
 
-<script>
-  // Close modal
-  function closeModal() {
-    document.getElementById('comingSoonModal').style.display = 'none';
-  }
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	</style>
 
-  // Show modal after 6 seconds (6000 ms)
-  window.onload = function() {
-    setTimeout(function() {
-      document.getElementById('comingSoonModal').style.display = 'flex';
-    }, 6000);
-  };
-</script>
+	<script>
+		// Close modal
+		function closeModal() {
+			document.getElementById('comingSoonModal').style.display = 'none';
+		}
+
+		// Show modal after 6 seconds (6000 ms)
+		window.onload = function () {
+			setTimeout(function () {
+				document.getElementById('comingSoonModal').style.display = 'flex';
+			}, 6000);
+		};
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
 
 </body>
 
