@@ -580,100 +580,6 @@ padding:70px 0;
   <!-- notification js -->
   <script type="60c09ef303b370a104c21e7f-text/javascript" src="../files/assets/js/bootstrap-growl.min.js"></script>
 
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-  function modalOne(heading,subheading){
-    $("#anyModal").modal();    
-    $("#modal_title").text(heading);
-    $("#modal_desc").text(subheading);    
-  }
-</script>
-
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-window.addEventListener('mouseover', initLandbot, { once: true });
-window.addEventListener('touchstart', initLandbot, { once: true });
-var myLandbot;
-function initLandbot() {
-  if (!myLandbot) {
-    var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-    s.addEventListener('load', function() {
-      var myLandbot = new Landbot.Livechat({
-        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1778455-766IER25L33NKZOS/index.json',
-      });
-    });
-    s.src = '../../cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-    var x = document.getElementsByTagName('script')[0];
-    x.parentNode.insertBefore(s, x);
-  }
-}
-</script>
-
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-  $(document).ready(function(){  
-    $('.button_subscribe').on("click",function()
-    {
-      var subscribe_email=$("input[name='subscribe_email']").val();
-      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        if(regex.test(subscribe_email)==true)
-        {
-          jQuery.ajax({
-                url:"https://Trust Point.com/Home/submit_subscribe",
-                type:"post",
-                data:{"subscribe_email":subscribe_email},
-                success:function(result)
-                {
-                   if(result)
-                   {
-                   $('.show_sub_result').html(result);
-                   }                       
-                }
-            });
-        }
-        else
-        {
-           $('.show_sub_result').html('<p style="color:red">ERROR::Bad Email Format.</p> ');
-        }
-
-      //alert('isndie the button');
-    });
-  });
-
-</script>
-
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-	$(function(){
-		$('.adj-hgt').matchHeight();
-	});
-</script>
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-		function change_btn_name()
-		{
-			console.log('inside the btn change');
-			$('.show_dropdown').toggle();
-			if ($('.show_dropdown').is(':visible'))
-	    	{
-	    		$('.change_btn_name').html('- Advanced Search');
-	    	}
-	    	else
-	    	{
-	    		$('.change_btn_name').html('+ Advanced Search');
-	    	}
-		}
-
-///////social icons /////
-$(window).scroll(function () {
-		if ($(this).scrollTop() > 350) {
-			$("#socials").fadeIn();
-		} else {
-			$("#socials").fadeOut();
-		}
-	});
-	</script>
-
   <!--<script>-->
   <!--document.querySelectorAll('a[href^="#"]').forEach(a => {-->
   <!--       a.addEventListener('click', function (e) {-->
@@ -710,460 +616,6 @@ $(window).scroll(function () {
     href="../../cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css">
   <script type="60c09ef303b370a104c21e7f-text/javascript"
     src="../../cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.js"></script>
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
- ////////////////for get in touch form/////////////////
-       var input = document.querySelector(".phone2"),
-        errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"],
-        result = document.querySelector("#result");
-    
-    
-    window.addEventListener("load", function () {
-      
-      
-      errorMsg = document.querySelector("#error-msg");
-    
-    function getIp(callback) {
-        fetch('https://jsonip.com/', { mode: 'cors' })
-  .then((resp) => resp.json())
-  
-  .catch(() => {
-         return {
-          country: '',
-         };
-      })
-      
-   .then((resp) => callback(resp.country));
-  
-    //  fetch('https://www.findip.net/', { headers: { 'Accept': 'application/json' }})
-    //   .then((resp) => resp.json())
-      
-    //   .catch(() => {
-    //      return {
-    //       country: '',
-    //      };
-    //   })
-       
-    //   .then((resp) => callback(resp.country));
-    //     console.log('inside the ip');
-    //   console.log(resp.json());
-    }
-      
-    var iti = window.intlTelInput(input, {
-                // allowDropdown: false,
-                // dropdownContainer: document.body,
-                // excludeCountries: ["us"],
-                hiddenInput: "full_number",                         
-                nationalMode: false,
-                formatOnDisplay: true,           
-                separateDialCode: true,
-                autoHideDialCode: true, 
-                autoPlaceholder: "aggressive" ,
-                initialCountry: "auto",
-                placeholderNumberType: "MOBILE",
-                preferredCountries: ['ae','ge'],           
-                geoIpLookup: function(callback) {
-                    $.get('https://freeipapi.com/api/json', function (data) {
-                        callback(data.countryCode);
-   // console.log(data.countryCode);
-});
-    // $.get('https://ipinfo.io?token=dc16e243f14bf5', function() {}, "jsonp").always(function(resp) {
-    //   var countryCode = (resp && resp.country) ? resp.country : "";
-    //   callback(countryCode);
-    // });
-  },
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/utils.js",
-            });
-      
-      
-      input.addEventListener('keyup', formatIntlTelInput);
-    input.addEventListener('change', formatIntlTelInput);
-    
-    function formatIntlTelInput() {
-        if (typeof intlTelInputUtils !== 'undefined') { // utils are lazy loaded, so must check
-            var currentText = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-            if (typeof currentText === 'string') { // sometimes the currentText is an object :)
-                iti.setNumber(currentText); // will autoformat because of formatOnDisplay=true
-            }
-        }
-    }
-       
-      
-             
-           input.addEventListener('keyup', function () {     
-                reset();
-                if (input.value.trim()) {
-                    if (iti.isValidNumber()) {
-            $(input).addClass('form-control is-valid');
-                             
-                    } else {                  
-                        $(input).addClass('form-control is-invalid');
-                        var errorCode = iti.getValidationError();
-                        errorMsg.innerHTML = errorMap[errorCode];                   
-                        $(errorMsg).show();
-                    }
-                }
-            });        
-            input.addEventListener('change', reset);        
-            input.addEventListener('keyup', reset);
-            
-      
-          var reset = function () {
-            $(input).removeClass('form-control is-invalid');
-            errorMsg.innerHTML = "";
-            $(errorMsg).hide();
-          
-        };
-      
-      
-      
-    ////////////// testing - start //////////////
-    
-    input.addEventListener('keyup', function(e) {
-      e.preventDefault();
-      var num = iti.getNumber(),
-          valid = iti.isValidNumber();
-      result.textContent = "Number: " + num + ", valid: " + valid;
-    }, false);
-    
-    input.addEventListener("focus", function() {
-      result.textContent = "";
-    }, false);
-        
-        
-   var iti3_1 = window.intlTelInputGlobals.getInstance(input);     
-   input.addEventListener('input', function() {
-    var fullNumber = iti3_1.getNumber();
-         console.log(fullNumber+' phone');
-    // document.querySelector('fullphone_number').value = fullNumber;
-    document.querySelector('.input-phone2').value = fullNumber;
-  });
-      
-      $(input).on("focusout", function(e, countryData) {
-                   var intlNumber = iti.getNumber();
-                   console.log(intlNumber);   
-               });
-      
-    ////////////// testing - end //////////////
-      
-        });
-        
-        
-      //-----------------------only-phone-number-input code (with +)-------------------------------start-------// 
-       function isPhoneNumberKey(evt)
-       {
-           var charCode = (evt.which) ? evt.which : evt.keyCode
-           if (charCode != 43 && charCode > 31 && (charCode < 48 || charCode > 57))
-               return false;
-           return true;
-       }
-
-       //-----------------------only-phone-number-input code (with +)-------------------------------end-------//         
-  </script>
-
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-  ///////////////for register interest form - anymodal ////////////////
-       var input_new = document.querySelector(".phone1"),
-        errorMap_new = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"],
-        result_new = document.querySelector("#result-new");
-    
-    
-    window.addEventListener("load", function () {
-      
-      
-      errorMsg_new = document.querySelector("#error-msg-new");
-    
-   function getIp(callback) {
-        fetch('https://jsonip.com/', { mode: 'cors' })
-  .then((resp) => resp.json())
-  
-  .catch(() => {
-         return {
-          country: '',
-         };
-      })
-      
-   .then((resp) => callback(resp.country));
-  
-    //  fetch('https://www.findip.net/', { headers: { 'Accept': 'application/json' }})
-    //   .then((resp) => resp.json())
-      
-    //   .catch(() => {
-    //      return {
-    //       country: '',
-    //      };
-    //   })
-       
-    //   .then((resp) => callback(resp.country));
-    //     console.log('inside the ip');
-    //   console.log(resp.json());
-    }
-      
-    var iti_new = window.intlTelInput(input_new, {
-                // allowDropdown: false,
-                // dropdownContainer: document.body,
-                // excludeCountries: ["us"],
-                hiddenInput: "full_number",                         
-                nationalMode: false,
-                formatOnDisplay: true,           
-                separateDialCode: true,
-                autoHideDialCode: true, 
-                autoPlaceholder: "aggressive" ,
-                initialCountry: "auto",
-                placeholderNumberType: "MOBILE",
-                preferredCountries: ['ae','ge'],           
-                geoIpLookup: function(callback) {
-                     $.get('https://freeipapi.com/api/json', function (data) {
-                        callback(data.countryCode);
-   // console.log(data.countryCode);
-});
-    // $.get('https://ipinfo.io?token=dc16e243f14bf5', function() {}, "jsonp").always(function(resp) {
-    //   var countryCode = (resp && resp.country) ? resp.country : "";
-    //   callback(countryCode);
-    // });
-  },
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/utils.js",
-            });
-      
-      
-      input_new.addEventListener('keyup', formatIntlTelInput);
-    input_new.addEventListener('change', formatIntlTelInput);
-    
-    function formatIntlTelInput() {
-        if (typeof intlTelInputUtils !== 'undefined') { // utils are lazy loaded, so must check
-            var currentText = iti_new.getNumber(intlTelInputUtils.numberFormat.E164);
-            if (typeof currentText === 'string') { // sometimes the currentText is an object :)
-                iti_new.setNumber(currentText); // will autoformat because of formatOnDisplay=true
-            }
-        }
-    }
-       
-      
-             
-           input_new.addEventListener('keyup', function () {     
-                reset();
-                if (input_new.value.trim()) {
-                    if (iti_new.isValidNumber()) {
-            $(input_new).addClass('form-control is-valid');
-                             
-                    } else {                  
-                        $(input_new).addClass('form-control is-invalid');
-                        var errorCode = iti_new.getValidationError();
-                        errorMsg_new.innerHTML = errorMap_new[errorCode];                   
-                        $(errorMsg_new).show();
-                    }
-                }
-            });        
-            input_new.addEventListener('change', reset);        
-            input_new.addEventListener('keyup', reset);
-      
-          var reset = function () {
-            $(input_new).removeClass('form-control is-invalid');
-            errorMsg_new.innerHTML = "";
-            $(errorMsg_new).hide();
-          
-        };
-      
-      
-      
-    ////////////// testing - start //////////////
-    
-    input_new.addEventListener('keyup', function(e) {
-      e.preventDefault();
-      var num = iti_new.getNumber(),
-          valid = iti_new.isValidNumber();
-      result_new.textContent = "Number: " + num + ", valid: " + valid;
-    }, false);
-    
-    input_new.addEventListener("focus", function() {
-      result_new.textContent = "";
-    }, false);
-        
-        
-     var iti3_2 = window.intlTelInputGlobals.getInstance(input_new); 
-         input_new.addEventListener('input', function() {
-    var fullNumber = iti3_2.getNumber();
-         console.log(fullNumber+'phone');
-    // document.querySelector('fullphone_number').value = fullNumber;
-    document.querySelector('.input-phone1').value = fullNumber;
-  });
-      
-      $(input_new).on("focusout", function(e, countryData) {
-                   var intlNumber = iti_new.getNumber();
-                   console.log(intlNumber);   
-               });
-      
-    ////////////// testing - end //////////////
-      
-        });
-        
-        
-      //-----------------------only-phone-number-input code (with +)-------------------------------start-------// 
-      
-       //-----------------------only-phone-number-input code (with +)-------------------------------end-------//         
-  </script>
-
-
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-  ///////////////for agent modal - agentmodal //////////////////////////
-       var input_new1 = document.querySelector(".phone3"),
-        errorMap_new1 = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"],
-        result_new1 = document.querySelector("#result_new1");
-    
-    
-    window.addEventListener("load", function () {
-      
-      
-      errorMsg_new1 = document.querySelector("#error-msg-new1");
-    
-    function getIp(callback) {
-        fetch('https://jsonip.com/', { mode: 'cors' })
-  .then((resp) => resp.json())
-  
-  .catch(() => {
-         return {
-          country: '',
-         };
-      })
-      
-   .then((resp) => callback(resp.country));
-  
-    //  fetch('https://www.findip.net/', { headers: { 'Accept': 'application/json' }})
-    //   .then((resp) => resp.json())
-      
-    //   .catch(() => {
-    //      return {
-    //       country: '',
-    //      };
-    //   })
-       
-    //   .then((resp) => callback(resp.country));
-    //     console.log('inside the ip');
-    //   console.log(resp.json());
-    }
-      
-    var iti_new1 = window.intlTelInput(input_new1, {
-                // allowDropdown: false,
-                // dropdownContainer: document.body,
-                // excludeCountries: ["us"],
-                hiddenInput: "full_number",                         
-                nationalMode: false,
-                formatOnDisplay: true,           
-                separateDialCode: true,
-                autoHideDialCode: true, 
-                autoPlaceholder: "aggressive" ,
-                initialCountry: "auto",
-                placeholderNumberType: "MOBILE",
-                preferredCountries: ['ae','ge'],           
-                geoIpLookup: function(callback) {
-                    $.get('https://freeipapi.com/api/json', function (data) {
-                        callback(data.countryCode);
-   // console.log(data.countryCode);
-});
-    // $.get('https://ipinfo.io?token=dc16e243f14bf5', function() {}, "jsonp").always(function(resp) {
-    //   var countryCode = (resp && resp.country) ? resp.country : "";
-    //   callback(countryCode);
-    // });
-  },
-                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/utils.js",
-            });
-      
-      
-       var iti3_3 = window.intlTelInputGlobals.getInstance(input_new1);   
-         input_new1.addEventListener('input', function() {
-    var fullNumber = iti_new1.getNumber();
-         console.log(fullNumber+'phone get in tyouch');
-    // document.querySelector('fullphone_number').value = fullNumber;
-    document.querySelector('.input-phone3').value = fullNumber;
-  });
-  
-  
-  
-      
-      input_new1.addEventListener('keyup', formatIntlTelInput);
-    input_new1.addEventListener('change', formatIntlTelInput);
-    
-    function formatIntlTelInput() {
-        if (typeof intlTelInputUtils !== 'undefined') { // utils are lazy loaded, so must check
-            var currentText = iti_new1.getNumber(intlTelInputUtils.numberFormat.E164);
-            if (typeof currentText === 'string') { // sometimes the currentText is an object :)
-                iti_new1.setNumber(currentText); // will autoformat because of formatOnDisplay=true
-            }
-        }
-    }
-       
-      
-             
-           input_new1.addEventListener('keyup', function () {     
-                reset();
-                if (input_new1.value.trim()) {
-                    if (iti_new1.isValidNumber()) {
-            $(input_new1).addClass('form-control is-valid');
-                             
-                    } else {                  
-                        $(input_new1).addClass('form-control is-invalid');
-                        var errorCode = iti_new1.getValidationError();
-                        errorMsg_new1.innerHTML = errorMap_new1[errorCode];                   
-                        $(errorMsg_new1).show();
-                    }
-                }
-            });        
-            input_new1.addEventListener('change', reset);        
-            input_new1.addEventListener('keyup', reset);
-      
-          var reset = function () {
-            $(input_new1).removeClass('form-control is-invalid');
-            errorMsg_new1.innerHTML = "";
-            $(errorMsg_new1).hide();
-          
-        };
-      
-      
-      
-    ////////////// testing - start //////////////
-    
-    input_new1.addEventListener('keyup', function(e) {
-      e.preventDefault();
-      var num = iti_new1.getNumber(),
-          valid = iti_new1.isValidNumber();
-      result_new1.textContent = "Number: " + num + ", valid: " + valid;
-    }, false);
-    
-    input_new1.addEventListener("focus", function() {
-      result_new1.textContent = "";
-    }, false);
-        
-        
-      
-      
-      $(input_new1).on("focusout", function(e, countryData) {
-                   var intlNumber = iti_new1.getNumber();
-                   console.log(intlNumber);   
-               });
-      
-    ////////////// testing - end //////////////
-      
-        });
-        
-        
-      //-----------------------only-phone-number-input code (with +)-------------------------------start-------// 
-      
-       //-----------------------only-phone-number-input code (with +)-------------------------------end-------//         
-  </script>
-
-  <!-- Start RAEK Code for Trust Point.com -->
-  <script type="60c09ef303b370a104c21e7f-text/javascript">
-					(function(window, document, id){
-					    var script = document.createElement('script');
-					    script.id = 'raekTag';
-					    script.type = 'text/javascript';
-					    script.src = '../../cdn.raek.net/js/raek.min5445.js?id='+id;
-					    script.async = true;
-					    document.getElementsByTagName('head')[0].appendChild(script);
-					})(window, document, "4e65928d35e0e7522ad19d29794015294755c8f27bd23083bd21f905548b8cfff4a9f1e573da74aa9b8dd8430410492a6aa2ac3c4a1a5fb0be9cb4485c31c54d");
-					</script>
-  <!-- End RAEK Code -->
 
   <!-- Footer -->
   <footer class="py-5 bg-main-blue">
@@ -1283,6 +735,81 @@ $(window).scroll(function () {
     </div>
   </footer>
 
+	<style>
+		.whatsapp-float {
+			position: fixed;
+			bottom: 100px;
+			right: 20px;
+			z-index: 100;
+		}
+	</style>
+
+	<a href="https://wa.me/+971507412091?text=Hi%2C%20I%20came%20across%20your%20real%20estate%20website%20and%20would%20love%20to%20connect%20with%20you."
+		class="whatsapp-float" target="_blank">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat with us"
+			style="width:60px; height:60px;">
+	</a>
+
+
+		<style>
+		/*Social Media Icons CSS*/
+
+		.social-media-icon {
+			position: fixed;
+			top: 90%;
+			left: 0;
+			display: inline-flex;
+			align-items: center;
+			justify-content: right;
+			transform: translateY(-50%);
+			z-index: 15000;
+			/*display: none;*/
+
+		}
+
+		.social-media-icon ul li {
+			width: 100%;
+		}
+
+		.social-media-icon ul li a {
+			display: inline-flex;
+			align-items: center;
+			padding: 10px 15px;
+			font-size: 20px;
+			border-radius: 10px;
+			color: #fff;
+			box-shadow: 0px 2px 6px rgb(0, 0, 0, 0.1);
+			transition: 0.8s all;
+			margin: 5px 0;
+			text-decoration: none;
+			text-align: center;
+		}
+
+		.social-media-icon ul li .whatsapp-btn {
+			background: #25d366;
+		}
+
+		.social-media-icon ul li .call-btn {
+			background: #50afe4;
+		}
+
+		.social-media-icon ul {
+			list-style: none;
+			float: right;
+		}
+
+
+		.social-media-icon ul li a .icon {
+			font-size: 25px;
+			width: 35px;
+		}
+
+		.eaMApA {
+			right: auto !important;
+			left: 0px;
+
+		}
+	</style>
   <!--------------------modal for social chat icons--------------------->
   <style>
     /*Social Media Icons CSS*/
